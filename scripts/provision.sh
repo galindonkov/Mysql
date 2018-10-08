@@ -27,6 +27,10 @@ wget --no-check-certificate 'https://raw.githubusercontent.com/mitchellh/vagrant
 chmod 600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant /home/vagrant/.ssh
 
+#Install mysql server and its env
+export DEBIAN_FRONTEND=noninteractive
+apt-get install -y mysql-server
+
 # Install NFS for Vagrant
 apt-get install -y nfs-common
 # Without libdbus virtualbox would not start automatically after compile
